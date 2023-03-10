@@ -6,6 +6,8 @@ import (
 	"SmallRedBook/tool/e"
 	"context"
 	"fmt"
+	"github.com/gomodule/redigo/redis"
+	"os"
 )
 
 type LikeService struct {
@@ -16,45 +18,22 @@ func (service *LikeService) LikeNote(ctx context.Context, userId string) tool.Re
 	key := userId + ":like:" + service.NoteId
 	county := userId + ":like:count"
 	likeDao := dao.NewLikeDao(ctx)
-	value, err := likeDao.Do("GET", key)
+	defer likeDao.Close()
+	script, err := os.ReadFile("service/like.lua")
 	if err != nil {
-		e.ThrowError(e.ErrorRedis)
+		e.ThrowError(e.Error)
 	}
-	if value == nil {
-		_, err = likeDao.Do("SET", key, 1)
-		if err != nil {
-			e.ThrowError(e.ErrorRedis)
-		}
-		_, err = likeDao.Do("incr", county)
-		if err != nil {
-			e.ThrowError(e.ErrorRedis)
-		}
-	} else {
-		str := fmt.Sprintf("%s", value)
-		if str == "1" {
-			_, err = likeDao.Do("SET", key, 0)
-			if err != nil {
-				e.ThrowError(e.ErrorRedis)
-			}
-			_, err = likeDao.Do("decr", county)
-			if err != nil {
-				e.ThrowError(e.ErrorRedis)
-			}
-		} else {
-			_, err = likeDao.Do("SET", key, 1)
-			if err != nil {
-				e.ThrowError(e.ErrorRedis)
-			}
-			_, err = likeDao.Do("incr", county)
-			if err != nil {
-				e.ThrowError(e.ErrorRedis)
-			}
-		}
+	lua := redis.NewScript(2, string(script))
+	res, err := lua.Do(likeDao.Conn, key, county)
+	if err != nil {
+		e.ThrowError(e.Error)
 	}
-	return tool.Response{
-		Status: e.Success,
-		Msg:    e.GetMsg(e.Success),
+	if res.(int64) == 0 {
+		e.ThrowError(e.Error)
+	} else if res.(int64) == 1 || res.(int64) == 2 {
+		return e.ThrowSuccess()
 	}
+	return e.ThrowError(e.Error)
 }
 
 func (service *LikeService) GetLikeCount(ctx context.Context, userId string) tool.Response {
