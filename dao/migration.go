@@ -15,7 +15,8 @@ func migration() {
 			&model.Like{},
 			&model.Note{},
 			&model.Comment{},
-			&model.CommentLike{})
+			&model.CommentLike{},
+			&model.LikeCount{})
 	if err != nil {
 		fmt.Println("err=", err)
 		return

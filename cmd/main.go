@@ -2,15 +2,16 @@ package main
 
 import (
 	"SmallRedBook/conf"
-	"SmallRedBook/dao"
 	"SmallRedBook/router"
+	"SmallRedBook/service"
 	"github.com/robfig/cron/v3"
 )
 
 func main() {
 	c := cron.New()
 	c.AddFunc("30 * * * *", func() {
-		dao.ReadDataFromRedis()
+		var likeService service.LikeService
+		likeService.ReadDataFromRedis()
 	})
 	c.Start()
 	// 初始化配置
