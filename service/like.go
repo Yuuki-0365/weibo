@@ -88,14 +88,19 @@ func (service *LikeService) ReadDataFromRedis() {
 			e.ThrowError(e.ErrorDataBase)
 		}
 		if exist {
-			err = likeDao.CreateLike(like)
+			err = likeDao.UpdateLike(like)
 			if err != nil {
 				e.ThrowError(e.ErrorDataBase)
 			}
+			likeDao.Do("DEL", key)
 		} else {
 			err = likeDao.CreateLike(like)
 			if err != nil {
 				e.ThrowError(e.ErrorDataBase)
+			}
+			_, err = likeDao.Do("DEL", key)
+			if err != nil {
+				e.ThrowError(e.ErrorRedis)
 			}
 		}
 	}
@@ -118,10 +123,15 @@ func (service *LikeService) ReadDataFromRedis() {
 			if err != nil {
 				e.ThrowError(e.ErrorDataBase)
 			}
+			likeDao.Do("DEL", key)
 		} else {
 			err = likeDao.CreateLikeCount(likeCount)
 			if err != nil {
 				e.ThrowError(e.ErrorDataBase)
+			}
+			_, err := likeDao.Do("DEL", key)
+			if err != nil {
+				e.ThrowError(e.ErrorRedis)
 			}
 		}
 	}
