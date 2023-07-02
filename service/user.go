@@ -1,14 +1,6 @@
 package service
 
 import (
-	"weibo/cache"
-	"weibo/conf"
-	"weibo/dao"
-	"weibo/model"
-	"weibo/serializer"
-	"weibo/tool"
-	"weibo/tool/e"
-	"weibo/tool/snowflake"
 	"context"
 	"fmt"
 	"github.com/gomodule/redigo/redis"
@@ -17,6 +9,14 @@ import (
 	"os"
 	"strconv"
 	"time"
+	"weibo/cache"
+	"weibo/conf"
+	"weibo/dao"
+	"weibo/model"
+	"weibo/serializer"
+	"weibo/tool"
+	"weibo/tool/e"
+	"weibo/tool/snowflake"
 )
 
 type UserService struct {
@@ -770,7 +770,7 @@ func (service *UserService) DeleteUser(ctx context.Context, userId string) tool.
 		return e.ThrowError(e.ErrorDataBase)
 	}
 	// todo
-	path := "C:\\Users\\15314\\GolandProjects\\weibo\\static\\imgs\\avatar\\user" + userId
+	path := "/home/yuuki/weibo/weibo/static/imgs/avatar/user" + userId
 	err = os.RemoveAll(path)
 	if err != nil {
 		fmt.Println(err)

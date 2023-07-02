@@ -17,7 +17,7 @@ var (
 
 func Init() {
 	// todo
-	file, err := ini.Load("C:\\Users\\15314\\GolandProjects\\weibo\\conf\\conf.ini")
+	file, err := ini.Load("/home/yuuki/weibo/conf/conf.ini")
 	if err != nil {
 		fmt.Println("配置文件读取错误，请检查文件路径:", err)
 	}
