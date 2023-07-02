@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c7716f7-66ea-42b6-b0ff-c4a6fd317d6a" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user.go" afterDir="false" />
-    </list>
+    <list default="true" id="9c7716f7-66ea-42b6-b0ff-c4a6fd317d6a" name="更改" comment="fix exe" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +13,7 @@
   <component name="GOROOT" url="file://$USER_HOME$/go/go1.20.2" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
+    <option name="RESET_MODE" value="SOFT" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="2S0hefHRQxlR72nHOZJ9bt6YzUw" />
@@ -91,7 +87,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix config.go" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix config.go" />
+    <MESSAGE value="fix exe" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix exe" />
   </component>
   <component name="VgoProject">
     <environment>
