@@ -39,7 +39,7 @@ var (
 )
 
 func Init() {
-	file, err := ini.Load("./conf.ini")
+	file, err := ini.Load("/home/yuuki/weibo/weibo/conf/conf.ini")
 	if err != nil {
 		panic(err)
 	}
