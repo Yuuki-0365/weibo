@@ -1,10 +1,10 @@
 package middleware
 
 import (
-	"SmallRedBook/tool"
-	"SmallRedBook/tool/e"
 	"github.com/gin-gonic/gin"
 	"time"
+	"weibo/tool"
+	"weibo/tool/e"
 )
 
 func JWT() gin.HandlerFunc {

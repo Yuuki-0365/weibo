@@ -1,11 +1,11 @@
 package dao
 
 import (
-	"SmallRedBook/cache"
-	"SmallRedBook/model"
 	"context"
 	"github.com/gomodule/redigo/redis"
 	"gorm.io/gorm"
+	"weibo/cache"
+	"weibo/model"
 )
 
 type LikeDao struct {

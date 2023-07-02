@@ -1,14 +1,14 @@
 package service
 
 import (
-	"SmallRedBook/cache"
-	"SmallRedBook/conf"
-	"SmallRedBook/dao"
-	"SmallRedBook/model"
-	"SmallRedBook/serializer"
-	"SmallRedBook/tool"
-	"SmallRedBook/tool/e"
-	"SmallRedBook/tool/snowflake"
+	"weibo/cache"
+	"weibo/conf"
+	"weibo/dao"
+	"weibo/model"
+	"weibo/serializer"
+	"weibo/tool"
+	"weibo/tool/e"
+	"weibo/tool/snowflake"
 	"context"
 	"fmt"
 	"github.com/gomodule/redigo/redis"
@@ -59,7 +59,7 @@ func (service *UserService) GetRegisterCode(ctx context.Context) tool.Response {
 	m := mail.NewMessage()
 	m.SetHeader("From", conf.SmtpEmail)
 	m.SetHeader("To", service.Email)
-	m.SetHeader("Subject", "SmallRedBook")
+	m.SetHeader("Subject", "weibo")
 	m.SetBody("text/html", mailText)
 
 	// 发送
@@ -99,7 +99,7 @@ func (service *UserService) GetLoginCode(ctx context.Context) tool.Response {
 	m := mail.NewMessage()
 	m.SetHeader("From", conf.SmtpEmail)
 	m.SetHeader("To", service.Email)
-	m.SetHeader("Subject", "SmallRedBook")
+	m.SetHeader("Subject", "weibo")
 	m.SetBody("text/html", mailText)
 
 	// 发送
@@ -176,7 +176,7 @@ func (service *UserService) Register(ctx context.Context) tool.Response {
 	m := mail.NewMessage()
 	m.SetHeader("From", conf.SmtpEmail)
 	m.SetHeader("To", service.Email)
-	m.SetHeader("Subject", "SmallRedBook")
+	m.SetHeader("Subject", "weibo")
 	m.SetBody("text/html", mailText)
 
 	// 发送
@@ -425,7 +425,7 @@ func (service *UserService) GetUpdateCode(ctx context.Context) tool.Response {
 	m := mail.NewMessage()
 	m.SetHeader("From", conf.SmtpEmail)
 	m.SetHeader("To", service.Email)
-	m.SetHeader("Subject", "SmallRedBook")
+	m.SetHeader("Subject", "weibo")
 	m.SetBody("text/html", mailText)
 
 	d := mail.NewDialer(conf.SmtpHost, 465, conf.SmtpEmail, conf.SmtpPass)
@@ -770,7 +770,7 @@ func (service *UserService) DeleteUser(ctx context.Context, userId string) tool.
 		return e.ThrowError(e.ErrorDataBase)
 	}
 	// todo
-	path := "C:\\Users\\15314\\GolandProjects\\SmallRedBook\\static\\imgs\\avatar\\user" + userId
+	path := "C:\\Users\\15314\\GolandProjects\\weibo\\static\\imgs\\avatar\\user" + userId
 	err = os.RemoveAll(path)
 	if err != nil {
 		fmt.Println(err)

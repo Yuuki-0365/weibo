@@ -1,10 +1,10 @@
 package service
 
 import (
-	"SmallRedBook/dao"
-	"SmallRedBook/model"
-	"SmallRedBook/tool"
-	"SmallRedBook/tool/e"
+	"weibo/dao"
+	"weibo/model"
+	"weibo/tool"
+	"weibo/tool/e"
 	"context"
 	"fmt"
 	"github.com/gomodule/redigo/redis"

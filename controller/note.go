@@ -1,11 +1,11 @@
 package controller
 
 import (
-	"SmallRedBook/service"
-	"SmallRedBook/tool"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"weibo/service"
+	"weibo/tool"
 )
 
 func PublishNote(c *gin.Context) {

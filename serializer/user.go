@@ -1,8 +1,8 @@
 package serializer
 
 import (
-	"SmallRedBook/conf"
-	"SmallRedBook/model"
+	"weibo/conf"
+	"weibo/model"
 )
 
 type User struct {

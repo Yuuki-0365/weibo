@@ -1,6 +1,6 @@
 package e
 
-import "SmallRedBook/tool"
+import "weibo/tool"
 
 func ThrowError(code int) tool.Response {
 	return tool.Response{

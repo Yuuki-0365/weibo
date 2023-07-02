@@ -1,13 +1,13 @@
 package service
 
 import (
-	"SmallRedBook/dao"
-	"SmallRedBook/model"
-	"SmallRedBook/tool"
-	"SmallRedBook/tool/e"
 	"context"
 	"strconv"
 	"time"
+	"weibo/dao"
+	"weibo/model"
+	"weibo/tool"
+	"weibo/tool/e"
 )
 
 type FavoriteService struct {

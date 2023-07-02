@@ -1,7 +1,7 @@
 package dao
 
 import (
-	"SmallRedBook/model"
+	"weibo/model"
 	"context"
 	"gorm.io/gorm"
 )

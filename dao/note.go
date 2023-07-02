@@ -1,9 +1,9 @@
 package dao
 
 import (
-	"SmallRedBook/model"
 	"context"
 	"gorm.io/gorm"
+	"weibo/model"
 )
 
 type NoteDao struct {

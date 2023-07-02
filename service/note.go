@@ -1,11 +1,11 @@
 package service
 
 import (
-	"SmallRedBook/conf"
-	"SmallRedBook/dao"
-	"SmallRedBook/model"
-	"SmallRedBook/tool"
-	"SmallRedBook/tool/e"
+	"weibo/conf"
+	"weibo/dao"
+	"weibo/model"
+	"weibo/tool"
+	"weibo/tool/e"
 	"context"
 	"mime/multipart"
 	"strconv"

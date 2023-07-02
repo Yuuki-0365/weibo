@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-var jwtSecret = []byte("SmallRedBook")
+var jwtSecret = []byte("weibo")
 
 type Claims struct {
 	UserId    string `json:"user_id"` // 唯一标识

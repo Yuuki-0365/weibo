@@ -1,7 +1,7 @@
 package service
 
 import (
-	"SmallRedBook/conf"
+	"weibo/conf"
 	"fmt"
 	"os"
 )

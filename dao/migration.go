@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"SmallRedBook/model"
 	"fmt"
+	"weibo/model"
 )
 
 func migration() {

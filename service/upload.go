@@ -1,7 +1,6 @@
 package service
 
 import (
-	"SmallRedBook/conf"
 	"context"
 	"github.com/qiniu/go-sdk/v7/auth/qbox"
 	"github.com/qiniu/go-sdk/v7/storage"
@@ -9,6 +8,7 @@ import (
 	"log"
 	"mime/multipart"
 	"os"
+	"weibo/conf"
 )
 
 type UploadService struct {

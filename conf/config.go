@@ -1,10 +1,10 @@
 package conf
 
 import (
-	"SmallRedBook/cache"
-	"SmallRedBook/dao"
 	"gopkg.in/ini.v1"
 	"strings"
+	"weibo/cache"
+	"weibo/dao"
 )
 
 var (
@@ -39,7 +39,7 @@ var (
 )
 
 func Init() {
-	file, err := ini.Load("C:\\Users\\15314\\GolandProjects\\SmallRedBook\\conf\\conf.ini")
+	file, err := ini.Load("./conf.ini")
 	if err != nil {
 		panic(err)
 	}

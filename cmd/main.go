@@ -1,10 +1,10 @@
 package main
 
 import (
-	"SmallRedBook/conf"
-	"SmallRedBook/router"
-	"SmallRedBook/service"
 	"github.com/robfig/cron/v3"
+	"weibo/conf"
+	"weibo/router"
+	"weibo/service"
 )
 
 func main() {

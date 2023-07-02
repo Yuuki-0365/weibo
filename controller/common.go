@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"SmallRedBook/tool"
 	"encoding/json"
+	"weibo/tool"
 )
 
 func ErrorResponse(err error) tool.Response {

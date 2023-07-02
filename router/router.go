@@ -1,8 +1,8 @@
 package router
 
 import (
-	"SmallRedBook/controller"
-	"SmallRedBook/middleware"
+	"weibo/controller"
+	"weibo/middleware"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"SmallRedBook/service"
-	"SmallRedBook/tool"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"weibo/service"
+	"weibo/tool"
 )
 
 func FavoriteNote(c *gin.Context) {
